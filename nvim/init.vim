@@ -25,7 +25,6 @@ endif
 
 " Required:
 filetype plugin indent on
-syntax enable
 
 " If you want to install not installed plugins on startup.
 if dein#check_install()
@@ -34,3 +33,6 @@ endif
 
 "End dein Scripts-------------------------
 set number
+syntax enable
+
+colorscheme iceberg
