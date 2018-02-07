@@ -1,26 +1,23 @@
-"dein Scripts-----------------------------
-if &compatible
-  set nocompatible               " Be iMproved
+"--------dein---------
+let s:dein_dir = expand('~/.cache/dein')
+let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
+
+if &runtimepath !~# '/dein.vim'
+  if !isdirectory(s:dein_repo_dir)
+    execute '!git clone https://github.com/Shougo/dein.vim' s:dein_repo_dir
+  endif
+  execute 'set runtimepath^=' . fnamemodify(s:dein_repo_dir, ':p')
 endif
 
-" Required:
-set runtimepath+=/home/try/.config/nvim//repos/github.com/Shougo/dein.vim
+if dein#load_state(s:dein_dir)
+  call dein#begin(s:dein_dir)
 
-" Required:
-if dein#load_state('/home/try/.config/nvim/')
-  call dein#begin('/home/try/.config/nvim/')
+  let g:rc_dir    = expand('~/.config/nvim')
+  let s:toml      = g:rc_dir . '/dein.toml'
+  let s:lazy_toml = g:rc_dir . '/dein_lazy.toml'
 
-  " Let dein manage dein
-  " Required:
-  call dein#add('/home/try/.config/nvim//repos/github.com/Shougo/dein.vim')
-
-  " Add or remove your plugins here:
-  call dein#add('Shougo/neosnippet.vim')
-  call dein#add('Shougo/neosnippet-snippets')
-
-  " You can specify revision/branch/tag.
-  call dein#add('Shougo/deol.nvim', { 'rev': 'a1b5108fd' })
-
+  call dein#load_toml(s:toml,      {'lazy': 0})
+  call dein#load_toml(s:lazy_toml, {'lazy': 1})
   " Required:
   call dein#end()
   call dein#save_state()
