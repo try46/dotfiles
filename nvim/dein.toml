@@ -9,3 +9,15 @@ nnoremap <silent><C-e> :NERDTreeToggle<CR>
 
 [[plugins]]
 repo = 'cocopon/iceberg.vim'
+
+[[plugins]]
+repo = 'justmao945/vim-clang'
+
+[[plugins]]
+repo = 'Shougo/deoplete.nvim'
+on_i = 1
+
+[[plugins]]
+repo = 'Shougo/neosnipppet.vim.git'
+on_i=1
+on_ft='snipppet'
