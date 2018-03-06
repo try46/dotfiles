@@ -2,4 +2,9 @@
 repo = 'cespare/vim-toml'
 on_ft = 'toml'
 
+[[plugins]]
+repo = 'vim-latex/vim-latex'
+on_ft = 'tex'
+
+
 
