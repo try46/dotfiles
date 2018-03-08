@@ -21,3 +21,7 @@ on_i = 1
 repo = 'Shougo/neosnippet.vim'
 on_i=1
 on_ft='snipppet'
+
+[[plugins]]
+repo = 'Shougo/vimproc.vim'
+
