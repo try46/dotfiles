@@ -10,3 +10,6 @@ on_ft = 'tex'
 repo = 'davidhalter/jedi-vim'
 on_ft = 'python'
 
+[[plugins]]
+repo = 'artur-shaik/vim-javacomplete2'
+on_ft = 'java'

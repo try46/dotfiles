@@ -13,7 +13,7 @@ if dein#load_state(s:dein_dir)
   call dein#begin(s:dein_dir)
 
   let g:rc_dir    = expand('~/.config/nvim')
- let s:toml      = g:rc_dir . '/dein.toml'
+  let s:toml      = g:rc_dir . '/dein.toml'
   let s:lazy_toml = g:rc_dir . '/dein_lazy.toml'
 
   call dein#load_toml(s:toml,      {'lazy': 0})
@@ -32,6 +32,7 @@ if dein#check_install()
 endif
 
 "End dein Scripts-------------------------
+let g:jedi#force_py_version = 3
 set number
 autocmd FileType java setlocal omnifunc=javacomplete#Complete
 colorscheme iceberg
