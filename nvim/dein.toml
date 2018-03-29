@@ -8,7 +8,7 @@ nnoremap <silent><C-e> :NERDTreeToggle<CR>
 '''
 
 [[plugins]]
-repo = 'cocopon/iceberg.vim'
+repo = 'tomasr/molokai'
 
 [[plugins]]
 repo = 'justmao945/vim-clang'
