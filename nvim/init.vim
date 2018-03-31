@@ -63,5 +63,5 @@ let g:Tex_ViewRule_pdf = 'Skim'
 "let g:Tex_ViewRule_pdf = 'open'"
 set number
 autocmd FileType java setlocal omnifunc=javacomplete#Complete
-autocmd FileType php,ctp :set dictionary=~/.vim/dict/php.dict
+autocmd FileType php,ctp :set dictionary=~/.config/nvim/dict/php.dict
 colorscheme molokai
