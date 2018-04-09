@@ -14,15 +14,6 @@ repo = 'tomasr/molokai'
 repo = 'justmao945/vim-clang'
 
 [[plugins]]
-repo = 'Shougo/deoplete.nvim'
-on_i = 1
-
-[[plugins]]
-repo = 'Shougo/neosnippet.vim'
-on_i=1
-on_ft='snipppet'
-
-[[plugins]]
 repo = 'Shougo/vimproc.vim'
 
 [[plugins]]
@@ -39,3 +30,5 @@ hook_add = '''
   nnoremap <silent>sb :Denite buffer -mode=normal<CR>
 	nnoremap <silent>t :DeniteCursorWord -buffer-name=gtags_def gtags_def -mode=normal<CR>
 '''
+
+

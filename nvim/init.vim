@@ -32,10 +32,11 @@ if dein#check_install()
 endif
 
 "End dein Scripts-------------------------
+let g:deoplete#enable_at_startup = 1
+
+
 let g:jedi#force_py_version = 3
 ""vim-latex
-filetype plugin on
-filetype indent on
 set shellslash
 set grepprg=grep\ -nH\ $*
 let g:tex_flavor='latex'
@@ -62,6 +63,13 @@ let g:Tex_ViewRule_pdf = 'Skim'
 "let g:Tex_ViewRule_pdf = 'open -a "Adobe Acrobat Reader DC"'
 "let g:Tex_ViewRule_pdf = 'open'"
 set number
-autocmd FileType java setlocal omnifunc=javacomplete#Complete
-autocmd FileType php,ctp :set dictionary=~/.config/nvim/dict/php.dict
-colorscheme molokai
+colorscheme molokai 
+
+" SuperTab like snippets behavior.
+ 
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+    \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+ 
+if has('conceal')
+  set conceallevel=2 concealcursor=i
+endif
