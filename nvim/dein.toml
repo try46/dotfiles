@@ -31,4 +31,6 @@ hook_add = '''
 	nnoremap <silent>t :DeniteCursorWord -buffer-name=gtags_def gtags_def -mode=normal<CR>
 '''
 
-
+[[plugins]]
+repo = 'Shougo/deoplete.nvim'
+hook_add = 'let g:deoplete#enable_at_startup = 1'
