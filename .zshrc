@@ -28,3 +28,4 @@ export PATH="$HOME/.goenv/bin:$PATH"
 eval "$(goenv init -)"
 export GOPATH=$HOME/go
 alias jn= 'jupyter notebook'
+eval "$(rbenv init -)"
