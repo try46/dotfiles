@@ -30,4 +30,20 @@ hook_add = '''
   nnoremap <silent>sb :Denite buffer -mode=normal<CR>
 	nnoremap <silent>t :DeniteCursorWord -buffer-name=gtags_def gtags_def -mode=normal<CR>
 '''
+[[plugins]]
+repo = 'mxw/vim-jsx'
+on_ft = 'javascript'
+hook_add = '''
+  let g:jsx_ext_required = 0
+'''
+
+[[plugins]]
+repo = 'pangloss/vim-javascript'
+on_ft = 'javascript'
+
+[[plugins]]
+repo = 'violetyk/iikanji-markdown.vim'
+
+[[plugins]]
+repo = 'kannokanno/previm'
 

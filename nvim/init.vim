@@ -31,6 +31,7 @@ if dein#check_install()
   call dein#install()
 endif
 
+let g:python3_host_prog = '/usr/local/bin/python3'
 "End dein Scripts-------------------------
 let g:deoplete#enable_at_startup = 1
 
@@ -64,6 +65,9 @@ let g:Tex_ViewRule_pdf = 'Skim'
 "let g:Tex_ViewRule_pdf = 'open'"
 set number
 colorscheme molokai 
-
+augroup PrevimSettings
+	autocmd!
+	autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
+augroup END
 " SuperTab like snippets behavior.
- 
+set tabstop=2 
