@@ -29,3 +29,5 @@ eval "$(goenv init -)"
 export GOPATH=$HOME/go
 alias jn= 'jupyter notebook'
 eval "$(rbenv init -)"
+
+[[ -z "$TMUX" && ! -z "$PS1" ]] && tmux
