@@ -20,13 +20,24 @@ if [[ 'uname'=='Darwin' ]]; then
 			#statements
 		git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
 		cp ./.zshrc ~/.zshrc
-	elif [[ ! -d 'which tmux' ]]; then
+	elif [[ ! -e 'which tmux' ]]; then
 		brew install tmux
 	fi
 # Install for Middleware mac
 fi
 
 #Install pyenv rbenv goenv
+if [[ 'uname'=='Linux' ]]; then
+		elif [[ ! -e 'which zsh' ]]; then
+			sudo apt install zsh
+		elif [[ ! -d '.zprezto' ]]; then
+				#statements
+		git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+		cp ./.zshrc ~/.zshrc
+	elif [[ ! -e 'which tmux' ]]; then
+		sudo apt install tmux
+
+fi
 
 if [[ ! -e 'which pyenv' ]]; then
 	git clone https://github.com/pyenv/pyenv.git
