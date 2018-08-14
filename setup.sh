@@ -1,8 +1,15 @@
-export PYVERSION2 = 2.7.15
-export PYVERSION3 = 3.7.0
-export RUBYVERSION = 2.5.0
-export GOVERSION = 1.10.3
+
+export PYVERSION2=2.7.15
+export PYVERSION3=3.7.0
+export RUBYVERSION=2.5.0
+export NODEVERSION=v10.8.0
+export GOVERSION=1.10.3
 #Install for dotfiles
+
+sudo apt update
+sudo apt upgrade
+sudo apt install libffi-dev
+
 mkdir -p ~/.config/nvim/color
 cp ./nvim/* ~/.config/nvim/
 cp -f ./nvim/color/ ~/.config/nvim/
@@ -11,31 +18,19 @@ cp ./.latex* ~/
 git config --global user.name try46
 git config --global user.email popuman61@gmail.com
 
-if [[ 'uname'=='Darwin' ]]; then
-	#statements
-	if [[ ! -e 'which zsh' ]]; then
-		#statements
-		brew install zsh
-	elif [[ ! -d '.zprezto' ]]; then
-			#statements
-		git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
-		cp ./.zshrc ~/.zshrc
-	elif [[ ! -e 'which tmux' ]]; then
-		brew install tmux
-	fi
-# Install for Middleware mac
-fi
 
-#Install pyenv rbenv goenv
-if [[ 'uname'=='Linux' ]]; then
 	if [[ ! -e 'which zsh' ]]; then
 			sudo apt install zsh
-	elif [[ ! -d '.zprezto' ]]; then
-				#statements
-		git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
-	elif [[ ! -e 'which tmux' ]]; then
-		sudo apt install tmux
 	fi
+	
+	if [[ ! -e 'which tmux' ]]; then
+		sudo apt install tmux
+  fi
+
+if [[ ! -d '.zprezto' ]]; then
+	#statements
+	git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+	cp ./zshrc ~/.zshrc
 fi
 
 if [[ ! -e 'which pyenv' ]]; then
@@ -45,11 +40,33 @@ if [[ ! -e 'which pyenv' ]]; then
 	echo 'eval "$(pyenv init -)"' >> ~/.zshrc
 	source ~/.zshrc
 
+
 	pyenv install $PYVERSION3
 	pyenv install $PYVERSION2
 
 	pyenv global $PYVERSION3
 	pip install neovim
+fi
+
+if [[ ! -e 'which rbenv' ]]; then
+	git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
+	git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
+ 	echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.zshrc
+ 	echo 'eval "$(rbenv init -)"' >> ~/.zshrc
+ 	source .zshrc
+
+ 	rbenv install $RUBYVERSION
+ 	rbenv global $RUBYVERSION
+fi
+
+if [[ ! -e 'which ndenv' ]]; then
+	git clone https://github.com/riywo/ndenv ~/.ndenv 
+	git clone https://github.com/riywo/node-build.git $(ndenv root)/plugins/node-build
+	echo 'export PATH="$HOME/.ndenv/bin:$PATH"' >> ~/.zshrc
+	echo 'eval "$(ndenv init -)"' >> ~/.zshrc
+	source ~/.zshrc
+	ndenv install $NODEVERSION
+	ndenv global $NODEVERSION
 fi
 
 
