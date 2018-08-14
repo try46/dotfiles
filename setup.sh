@@ -30,11 +30,11 @@ git config --global user.email popuman61@gmail.com
 if [[ ! -d '.zprezto' ]]; then
 	#statements
 	git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
-	cp ./zshrc ~/.zshrc
+	cp ./.zshrc ~/.zshrc
 fi
 
 if [[ ! -e 'which pyenv' ]]; then
-	git clone https://github.com/pyenv/pyenv.git
+	git clone https://github.com/pyenv/pyenv.git ~/.pyenv
 	echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.zshrc
 	echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.zshrc
 	echo 'eval "$(pyenv init -)"' >> ~/.zshrc

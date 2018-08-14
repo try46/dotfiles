@@ -23,13 +23,13 @@ alias rain='rainbowstream -iot'
 #alias tomcatstop=' /usr/local/Cellar/tomcat@8/8.5.28/bin/catalina stop'
 alias inet='ifconfig | grep inet'
 export EDITOR=vim
-export PATH="/usr/local/opt/tomcat@8/bin:$PATH"
+#export PATH="/usr/local/opt/tomcat@8/bin:$PATH"
 #setup goenv
-export PATH="$HOME/.goenv/bin:$PATH"
-eval "$(goenv init -)"
-export GOPATH=$HOME/go
+#export PATH="$HOME/.goenv/bin:$PATH"
+#eval "$(goenv init -)"
+#export GOPATH=$HOME/go
 alias jn= 'jupyter notebook'
 #setup rbenv 
-eval "$(rbenv init -)"
+#eval "$(rbenv init -)"
 alias vagrantup='vagrant up && vagrant ssh'
 [[ -z "$TMUX" && ! -z "$PS1" ]] && tmux
