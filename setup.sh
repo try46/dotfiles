@@ -28,15 +28,14 @@ fi
 
 #Install pyenv rbenv goenv
 if [[ 'uname'=='Linux' ]]; then
-		elif [[ ! -e 'which zsh' ]]; then
+	if [[ ! -e 'which zsh' ]]; then
 			sudo apt install zsh
-		elif [[ ! -d '.zprezto' ]]; then
+	elif [[ ! -d '.zprezto' ]]; then
 				#statements
 		git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
-		cp ./.zshrc ~/.zshrc
 	elif [[ ! -e 'which tmux' ]]; then
 		sudo apt install tmux
-
+	fi
 fi
 
 if [[ ! -e 'which pyenv' ]]; then
