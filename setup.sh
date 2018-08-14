@@ -1,4 +1,3 @@
-
 export PYVERSION2=2.7.15
 export PYVERSION3=3.7.0
 export RUBYVERSION=2.5.0
@@ -8,7 +7,7 @@ export GOVERSION=1.10.3
 
 sudo apt update
 sudo apt upgrade
-sudo apt install libffi-dev
+sudo apt install libffi-dev 
 
 mkdir -p ~/.config/nvim/color
 cp ./nvim/* ~/.config/nvim/
@@ -30,9 +29,8 @@ git config --global user.email popuman61@gmail.com
 if [[ ! -d '.zprezto' ]]; then
 	#statements
 	git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
-	cp ./.zshrc ~/.zshrc
 fi
-
+cp ./.zshrc ~/.zshrc
 if [[ ! -e 'which pyenv' ]]; then
 	git clone https://github.com/pyenv/pyenv.git ~/.pyenv
 	echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.zshrc
@@ -53,7 +51,7 @@ if [[ ! -e 'which rbenv' ]]; then
 	git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
  	echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.zshrc
  	echo 'eval "$(rbenv init -)"' >> ~/.zshrc
- 	source .zshrc
+ 	source ~/.zshrc
 
  	rbenv install $RUBYVERSION
  	rbenv global $RUBYVERSION
