@@ -31,5 +31,5 @@ export GOPATH=$HOME/go
 alias jn= 'jupyter notebook'
 #setup rbenv 
 eval "$(rbenv init -)"
-
+alias vagrantup='vagrant up && vagrant ssh'
 [[ -z "$TMUX" && ! -z "$PS1" ]] && tmux
