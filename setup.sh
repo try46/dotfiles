@@ -7,11 +7,7 @@ export GOVERSION=1.10.3
 
 sudo apt update
 sudo apt upgrade
-<<<<<<< HEAD
 sudo apt install libffi-dev zlib1g-dev libssl-dev
-=======
-sudo apt install libffi-dev 
->>>>>>> origin/master
 
 mkdir -p ~/.config/nvim/color
 cp ./nvim/* ~/.config/nvim/
