@@ -16,7 +16,7 @@ cp ./.latex* ~/
 
 git config --global user.name try46
 git config --global user.email popuman61@gmail.com
-
+git config --global core.editor 'vim -c "set fenc=utf-8"'
 
 	if [[ ! -e 'which zsh' ]]; then
 			sudo apt install zsh
