@@ -7,7 +7,7 @@ export GOVERSION=1.10.3
 
 sudo apt update
 sudo apt upgrade
-sudo apt install libffi-dev zlib1g-dev libssl-dev
+sudo apt install libffi-dev zlib1g-dev libssl-dev ninja-build gettext libtool libtool-bin autoconf automake cmake g++ pkg-config unzip
 
 mkdir -p ~/.config/nvim/color
 cp ./nvim/* ~/.config/nvim/
