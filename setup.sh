@@ -31,6 +31,7 @@ if [[ ! -d '.zprezto' ]]; then
 	git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
 fi
 cp ./.zshrc ~/.zshrc
+
 if [[ ! -e 'which pyenv' ]]; then
 	git clone https://github.com/pyenv/pyenv.git ~/.pyenv
 	echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.zshrc
