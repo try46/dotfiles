@@ -10,20 +10,8 @@ cp ./.latex* ~/
 
 git config --global user.name try46
 git config --global user.email popuman61@gmail.com
+git config --global core.editor 'vim -c "set fenc=utf-8"'
 
-if [[ 'uname'=='Darwin' ]]; then
-	#statements
-	if [[ ! -e 'which zsh' ]]; then
-		#statements
-		brew install zsh
-	elif [[ ! -d '.zprezto' ]]; then
-			#statements
-		git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
-		cp ./.zshrc ~/.zshrc
-	elif [[ ! -e 'which tmux' ]]; then
-		brew install tmux
-	fi
-# Install for Middleware mac
-fi
-
-	
+brew install zsh
+brew install tmux
+brew install caskroom/cask/brew-cask
