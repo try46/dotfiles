@@ -66,3 +66,24 @@ hook_add = """
 let g:deoplete#sources#clang#libclang_path='/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/libclang.dylib'
 let g:deoplete#sources#clang#clang_header='/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang'
 """
+[[plugins]]
+repo = 'pangloss/vim-javascript'
+on_ft = ['javascript', 'javascript.jsx']
+
+[[plugins]]
+repo = 'mxw/vim-jsx'
+on_ft = ['javascript', 'javascript.jsx']
+
+[[plugins]]
+repo = 'moll/vim-node'
+on_ft = ['javascript']
+
+[[plugins]]
+repo = 'w0rp/ale.git'
+on_source = ['lightline.vim']
+hook_add = '''
+  let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '']
+  let g:ale_echo_msg_format = '[%linter%] %s'
+  nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+  nmap <silent> <C-j> <Plug>(ale_next_wrap)
+'''

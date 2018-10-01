@@ -31,8 +31,8 @@ if dein#check_install()
   call dein#install()
 endif
 
- "let g:python3_host_prog = '/usr/local/bin/python3'
- let g:python3_host_prog = '/home/try/.pyenv/shims/python3'
+let g:python3_host_prog = '/usr/local/bin/python3'
+"let g:python3_host_prog = '/Users/try/.pyenv/shims/python3'
 "End dein Scripts-------------------------
 let g:deoplete#enable_at_startup = 1
 
@@ -65,13 +65,14 @@ let g:Tex_ViewRule_pdf = 'Skim'
 "let g:Tex_ViewRule_pdf = 'open -a "Adobe Acrobat Reader DC"'
 "let g:Tex_ViewRule_pdf = 'open'"
 set number
-"colorscheme iceberg
-autocmd ColorScheme * highlight Normal ctermbg=none
-autocmd ColorScheme * highlight LineNr ctermbg=none
 colorscheme molokai 
 augroup PrevimSettings
 	autocmd!
 	autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
 augroup END
 " SuperTab like snippets behavior.
-set tabstop=2 
+set expandtab
+set tabstop=2
+set shiftwidth=2
+hi SpecialKey ctermfg=darkmagenta
+set list listchars=tab:¦_
