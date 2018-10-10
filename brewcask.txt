@@ -1,4 +1,5 @@
 android-studio
+atom
 cyberduck
 discord
 iina
@@ -8,10 +9,9 @@ macdown
 master-pdf-editor
 phpstorm
 pycharm
-scilab
 skim
 sourcetree
-texworks
+texstudio
 tuntap
 unity
 visual-studio-code
