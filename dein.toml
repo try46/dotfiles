@@ -1,0 +1,55 @@
+[[pulgins]]
+repo = 'Shougo/dein.vim'
+
+[[plugins]]
+repo = 'itchyny/lightline.vim'
+
+[[plugins]]
+repo = 'scrooloose/nerdtree'
+hook_add = '''
+  nnoremap <silent><C-e> :NERDTreeToggle<CR>
+'''
+
+[[plugins]]
+repo = 'jacoborus/tender.vim'
+
+[[plugins]]
+repo = 'anoike/vim-moneyforward'
+
+[[plugins]]
+repo = 'nathanaelkane/vim-indent-guides'
+hook_add = '''
+  let g:indent_guides_start_level = 2
+'''
+
+[[plugins]]
+repo = 'Shougo/denite.nvim'
+
+#[[plugins]]
+#repo = 'tomasr/molokai'
+[[plugins]]
+repo = 'dracula/vim'
+
+[[plugins]]
+repo  = 'leafgarland/typescript-vim'
+
+# Snippets
+[[plugins]]
+repo = 'Shougo/neosnippet.vim'
+hook_add = '''
+  imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+  smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+  xmap <C-k>     <Plug>(neosnippet_expand_target)
+'''
+
+[[plugins]]
+repo = 'Shougo/neosnippet-snippets'
+
+[[plugins]]
+repo = 'itchyny/lightline.vim'
+hook_add = '''
+  let g:lightline = {
+  \  'colorscheme' : 'one',
+  \}
+'''
+
