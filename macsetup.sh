@@ -7,8 +7,11 @@ mkdir -p ~/.config/nvim/color
 cp ./nvim/* ~/.config/nvim/
 cp -f ./nvim/color/ ~/.config/nvim/
 cp ./.latex* ~/
-
+cp ./.tmux.conf ~/
+# setup git 
 git config --global user.name try46
 git config --global user.email popuman61@gmail.com
 git config --global core.editor 'vim -c "set fenc=utf-8"'
-brew install tmux
+
+#brew install tmux
+
