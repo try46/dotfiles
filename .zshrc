@@ -9,7 +9,6 @@
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
-
 export HISTFILE=${HOME}/.zsh_history
 export HISTSEZE=1000
 export SAVEHIST=100000
@@ -67,10 +66,15 @@ alias dockerfullrm="docker ps -a | awk 'NR>1 {print $1}' | xargs docker rm -f"
 alias dockerfullrmimage="docker images | awk 'NR>1 {print $3}' | xargs docker rmi"
 alias dcstart="docker-compose up -d"
 alias dcstop="docker-compose stop"
-alias monaca="/usr/local/Cellar/node/11.1.0/lib/node_modules/monaca/bin/monaca"
+#alias monaca="/usr/local/Cellar/node/11.1.0/lib/node_modules/monaca/bin/monaca"
 alias activate="source /Users/try/.pyenv/versions/anaconda3-5.2.0/bin"
 export PATH="/usr/local/opt/openssl/bin:$PATH"
 export LDFLAGS="-L/usr/local/opt/openssl/lib"
 export CPPFLAGS="-I/usr/local/opt/openssl/include"
 export PKG_CONFIG_PATH="/usr/local/opt/openssl/lib/pkgconfig"
 alias emacs="nvim"
+[[ -z "$TMUX" && ! -z "$PS1" ]] && tmux
+export PATH="/usr/local/opt/sphinx-doc/bin:$PATH"
+figlet 'welcome to try.local'
+alias vs='code'
+export PATH=$HOME/.nodebrew/current/bin:$PATH

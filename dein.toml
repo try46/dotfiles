@@ -33,14 +33,6 @@ repo = 'dracula/vim'
 [[plugins]]
 repo  = 'leafgarland/typescript-vim'
 
-# Snippets
-[[plugins]]
-repo = 'Shougo/neosnippet.vim'
-hook_add = '''
-  imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-  smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-  xmap <C-k>     <Plug>(neosnippet_expand_target)
-'''
 
 [[plugins]]
 repo = 'Shougo/neosnippet-snippets'
@@ -53,3 +45,14 @@ hook_add = '''
   \}
 '''
 
+[[plugins]]
+repo = 'hzchirs/vim-material'
+
+[[plugins]]
+repo = 'mattn/emmet-vim'
+[[plugins]]
+repo = 'billyvg/tigris.nvim'
+on_ft = ['javascript', 'javascript.jsx']
+hook_post_update = '''
+  let g:dein#plugin.build = './install.sh'
+'''

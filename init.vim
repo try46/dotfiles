@@ -18,6 +18,7 @@ if dein#load_state(s:dein_dir)
 
   call dein#load_toml(s:toml,      {'lazy': 0})
   call dein#load_toml(s:lazy_toml, {'lazy': 1})
+
   " Required:
   call dein#end()
   call dein#save_state()
@@ -35,7 +36,6 @@ endif
 let g:python3_host_prog = '/Users/try/.pyenv/shims/python3'
 "End dein Scripts-------------------------
 let g:deoplete#enable_at_startup = 1
-
 
 let g:jedi#force_py_version = 3
 ""vim-latex
@@ -56,7 +56,7 @@ let g:Tex_BibtexFlavor = 'upbibtex'
 let g:Tex_MakeIndexFlavor = 'upmendex $*.idx'
 let g:Tex_UseEditorSettingInDVIViewer = 1
 let g:Tex_ViewRule_pdf = 'Skim'
-"let g:Tex_ViewRule_pdf = 'open -a Skim'
+let g:Tex_ViewRule_pdf = 'open -a Skim'
 "let g:Tex_ViewRule_pdf = 'open -a Preview'
 "let g:Tex_ViewRule_pdf = 'open -a TeXShop'
 "let g:Tex_ViewRule_pdf = '/Applications/TeXworks.app/Contents/MacOS/TeXworks'
@@ -65,7 +65,7 @@ let g:Tex_ViewRule_pdf = 'Skim'
 "let g:Tex_ViewRule_pdf = 'open -a "Adobe Acrobat Reader DC"'
 "let g:Tex_ViewRule_pdf = 'open'"
 set number
-colorscheme dracula
+colorscheme dracula 
 set t_Co=256
 augroup PrevimSettings
 	autocmd!
@@ -79,7 +79,9 @@ set shiftwidth=2
 hi SpecialKey ctermfg=darkmagenta
 set list listchars=tab:¦_
 set shortmess +=I
-
+let g:tigris#enabled = 1
+let g:tigris#on_the_fly_enabled = 1
+let g:tigris#delay = 300
 " autopep8 setting
 " original http://stackoverflow.com/questions/12374200/using-uncrustify-with-vim/15513829#15513829
 function! Preserve(command)
@@ -109,8 +111,73 @@ endfunction
 " Shift + F で自動修正
 autocmd FileType python nnoremap <S-f> :call Autopep8()<CR>
 
+"スペースからtabへ変換
 function! Tab()
   set noexpandtab
   retab! 2
 endfunction
 
+function! Space()
+  set expandtab
+  retab 2
+endfunction
+let g:airline_theme='material'
+
+let g:lightline = {
+        \ 'colorscheme': 'wombat',
+        \ 'mode_map': {'c': 'NORMAL'},
+        \ 'active': {
+        \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename' ] ]
+        \ },
+        \ 'component_function': {
+        \   'modified': 'LightlineModified',
+        \   'readonly': 'LightlineReadonly',
+        \   'fugitive': 'LightlineFugitive',
+        \   'filename': 'LightlineFilename',
+        \   'fileformat': 'LightlineFileformat',
+        \   'filetype': 'LightlineFiletype',
+        \   'fileencoding': 'LightlineFileencoding',
+        \   'mode': 'LightlineMode'
+        \ }
+        \ }
+
+function! LightlineModified()
+  return &ft =~ 'help\|vimfiler\|gundo' ? '' : &modified ? '+' : &modifiable ? '' : '-'
+endfunction
+
+function! LightlineReadonly()
+  return &ft !~? 'help\|vimfiler\|gundo' && &readonly ? 'x' : ''
+endfunction
+
+function! LightlineFilename()
+  return ('' != LightlineReadonly() ? LightlineReadonly() . ' ' : '') .
+        \ (&ft == 'vimfiler' ? vimfiler#get_status_string() :
+        \  &ft == 'unite' ? unite#get_status_string() :
+        \  &ft == 'vimshell' ? vimshell#get_status_string() :
+        \ '' != expand('%:t') ? expand('%:t') : '[No Name]') .
+        \ ('' != LightlineModified() ? ' ' . LightlineModified() : '')
+endfunction
+
+function! LightlineFugitive()
+  if &ft !~? 'vimfiler\|gundo' && exists('*fugitive#head')
+    return fugitive#head()
+  else
+    return ''
+  endif
+endfunction
+
+function! LightlineFileformat()
+  return winwidth(0) > 70 ? &fileformat : ''
+endfunction
+
+function! LightlineFiletype()
+  return winwidth(0) > 70 ? (&filetype !=# '' ? &filetype : 'no ft') : ''
+endfunction
+
+function! LightlineFileencoding()
+  return winwidth(0) > 70 ? (&fenc !=# '' ? &fenc : &enc) : ''
+endfunction
+
+function! LightlineMode()
+  return winwidth(0) > 60 ? lightline#mode() : ''
+endfunction
