@@ -33,7 +33,9 @@ if dein#check_install()
 endif
 
 "let g:python3_host_prog = '/usr/local/bin/python3'
-let g:python3_host_prog = '/Users/try/.pyenv/shims/python3'
+"let g:python3_host_prog = '/Users/try/.pyenv/shims/python3'
+let g:python3_host_prog = '/Users/try/.pyenv/shims/python'
+let g:python_host_prog = '/usr/local/bin/python2'
 "End dein Scripts-------------------------
 let g:deoplete#enable_at_startup = 1
 
@@ -112,12 +114,12 @@ endfunction
 autocmd FileType python nnoremap <S-f> :call Autopep8()<CR>
 
 "スペースからtabへ変換
-function! Tab()
+function! SpaceToTab()
   set noexpandtab
   retab! 2
 endfunction
-
-function! Space()
+"tabからスペースに変換
+function! TabToSpace()
   set expandtab
   retab 2
 endfunction

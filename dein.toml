@@ -56,3 +56,9 @@ on_ft = ['javascript', 'javascript.jsx']
 hook_post_update = '''
   let g:dein#plugin.build = './install.sh'
 '''
+[[plugins]]
+repo = 'reireias/vim-cheatsheet'
+hock_add = '''
+  let g:cheatsheet#cheat_file = '~/.config/nvim/.cheatsheet.md'
+'''
+
