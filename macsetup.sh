@@ -1,5 +1,5 @@
 export PYVERSION2=2.7.15
-export PYVERSION3=3.7.0
+export PYVERSION3=3.6.0
 export RUBYVERSION=2.5.0
 export GOVERSION=1.10.3
 #Install for dotfiles
@@ -14,4 +14,5 @@ git config --global user.email popuman61@gmail.com
 git config --global core.editor 'vim -c "set fenc=utf-8"'
 
 #brew install tmux
+
 
