@@ -13,6 +13,20 @@ git config --global user.name try46
 git config --global user.email popuman61@gmail.com
 git config --global core.editor 'vim -c "set fenc=utf-8"'
 
-#brew install tmux
+#setup xcode
+xcode-select --install
+
+sudo xcodebuild -license
+
+#install homebrew
+
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+brew tap caskroom/cask 
+brew tap homebrew/cask-fonts
+brew tap neovim/neovim
+brew tap rogual/neovim-dot-app
+
+brew install tmux zsh git nvim pyenv rbenv goenv yarn
 
 
