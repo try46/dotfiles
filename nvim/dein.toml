@@ -62,3 +62,5 @@ hock_add = '''
   let g:cheatsheet#cheat_file = '~/.config/nvim/.cheatsheet.md'
 '''
 
+[[plugins]]
+repo = 'mattn/sonictemplate-vim'

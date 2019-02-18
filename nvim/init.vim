@@ -84,6 +84,10 @@ set shortmess +=I
 let g:tigris#enabled = 1
 let g:tigris#on_the_fly_enabled = 1
 let g:tigris#delay = 300
+let g:sonictemplate_vim_template_dir = [
+      \ './template'
+      \]
+
 " autopep8 setting
 " original http://stackoverflow.com/questions/12374200/using-uncrustify-with-vim/15513829#15513829
 function! Preserve(command)
