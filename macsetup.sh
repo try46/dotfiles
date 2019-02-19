@@ -14,9 +14,6 @@ git config --global user.email popuman61@gmail.com
 git config --global core.editor 'vim -c "set fenc=utf-8"'
 
 #setup xcode
-xcode-select --install
-
-sudo xcodebuild -license
 
 #install homebrew
 
