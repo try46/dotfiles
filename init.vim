@@ -31,7 +31,14 @@ syntax enable
 if dein#check_install()
   call dein#install()
 endif
-
+"()や{}とかの補完の設定
+"閉じ括弧自動保管
+inoremap { {}<LEFT>
+inoremap [ []<LEFT>
+inoremap ( ()<LEFT>
+" inoremap < <><LEFT>
+inoremap " ""<LEFT>
+inoremap ' ''<LEFT>
 "let g:python3_host_prog = '/usr/local/bin/python3'
 "let g:python3_host_prog = '/Users/try/.pyenv/shims/python3'
 let g:python3_host_prog = '/Users/try/.pyenv/shims/python'
