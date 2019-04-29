@@ -25,7 +25,11 @@ hook_add = '''
 [[plugins]]
 repo = 'Shougo/denite.nvim'
 
+[[plugins]]
+repo = 'vim-airline/vim-airline'
 #[[plugins]]
+[[plugins]]
+repo = 'vim-airline/vim-airline-themes'
 #repo = 'tomasr/molokai'
 [[plugins]]
 repo = 'dracula/vim'
@@ -64,3 +68,8 @@ hock_add = '''
 
 [[plugins]]
 repo = 'mattn/sonictemplate-vim'
+[[plugins]]
+repo = 'ekalinin/Dockerfile.vim'
+
+[[plugins]]
+repo = 'cj/vim-webdevicons'

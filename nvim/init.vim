@@ -31,7 +31,14 @@ syntax enable
 if dein#check_install()
   call dein#install()
 endif
-
+"()や{}とかの補完の設定
+"閉じ括弧自動保管
+inoremap { {}<LEFT>
+inoremap [ []<LEFT>
+inoremap ( ()<LEFT>
+" inoremap < <><LEFT>
+inoremap " ""<LEFT>
+inoremap ' ''<LEFT>
 "let g:python3_host_prog = '/usr/local/bin/python3'
 "let g:python3_host_prog = '/Users/try/.pyenv/shims/python3'
 let g:python3_host_prog = '/Users/try/.pyenv/shims/python'
@@ -58,21 +65,22 @@ let g:Tex_BibtexFlavor = 'upbibtex'
 let g:Tex_MakeIndexFlavor = 'upmendex $*.idx'
 let g:Tex_UseEditorSettingInDVIViewer = 1
 let g:Tex_ViewRule_pdf = 'Skim'
-let g:Tex_ViewRule_pdf = 'open -a Skim'
+"let g:Tex_ViewRule_pdf = 'open -a Skim'
+let g:latex_latexmk_continuous = 1
 "let g:Tex_ViewRule_pdf = 'open -a Preview'
 "let g:Tex_ViewRule_pdf = 'open -a TeXShop'
 "let g:Tex_ViewRule_pdf = '/Applications/TeXworks.app/Contents/MacOS/TeXworks'
 "let g:Tex_ViewRule_pdf = '/Applications/texstudio.app/Contents/MacOS/texstudio --pdf-viewer-only'
 "let g:Tex_ViewRule_pdf = 'open -a Firefox'
-"let g:Tex_ViewRule_pdf = 'open -a "Adobe Acrobat Reader DC"'
+let g:Tex_ViewRule_pdf = 'open -a "Adobe Acrobat Reader DC"'
 "let g:Tex_ViewRule_pdf = 'open'"
 set number
 colorscheme dracula 
 set t_Co=256
 augroup PrevimSettings
-	autocmd!
-	autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
-autocmd FileType typescript: set makeprg=tsc
+  autocmd!
+  autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
+  autocmd FileType typescript: set makeprg=tsc
 augroup END
 " SuperTab like snippets behavior.
 set expandtab
@@ -91,27 +99,27 @@ let g:sonictemplate_vim_template_dir = [
 " autopep8 setting
 " original http://stackoverflow.com/questions/12374200/using-uncrustify-with-vim/15513829#15513829
 function! Preserve(command)
-    " Save the last search.
-    let search = @/
-    " Save the current cursor position.
-    let cursor_position = getpos('.')
-    " Save the current window position.
-    normal! H
-    let window_position = getpos('.')
-    call setpos('.', cursor_position)
-    " Execute the command.
-    execute a:command
-    " Restore the last search.
-    let @/ = search
-    " Restore the previous window position.
-    call setpos('.', window_position)
-    normal! zt
-    " Restore the previous cursor position.
-    call setpos('.', cursor_position)
+  " Save the last search.
+  let search = @/
+  " Save the current cursor position.
+  let cursor_position = getpos('.')
+  " Save the current window position.
+  normal! H
+  let window_position = getpos('.')
+  call setpos('.', cursor_position)
+  " Execute the command.
+  execute a:command
+  " Restore the last search.
+  let @/ = search
+  " Restore the previous window position.
+  call setpos('.', window_position)
+  normal! zt
+  " Restore the previous cursor position.
+  call setpos('.', cursor_position)
 endfunction
 
 function! Autopep8()
-    call Preserve(':silent %!autopep8 -')
+  call Preserve(':silent %!autopep8 -')
 endfunction
 
 " Shift + F で自動修正
@@ -127,26 +135,37 @@ function! TabToSpace()
   set expandtab
   retab 2
 endfunction
-let g:airline_theme='material'
-
+let g:airline_powerline_fonts = 1
+set laststatus=2
+let g:airline_theme='molokai'
+let g:airline#extensions#tabline#enabled = 1
 let g:lightline = {
-        \ 'colorscheme': 'wombat',
-        \ 'mode_map': {'c': 'NORMAL'},
-        \ 'active': {
-        \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename' ] ]
-        \ },
-        \ 'component_function': {
-        \   'modified': 'LightlineModified',
-        \   'readonly': 'LightlineReadonly',
-        \   'fugitive': 'LightlineFugitive',
-        \   'filename': 'LightlineFilename',
-        \   'fileformat': 'LightlineFileformat',
-        \   'filetype': 'LightlineFiletype',
-        \   'fileencoding': 'LightlineFileencoding',
-        \   'mode': 'LightlineMode'
-        \ }
-        \ }
+      \ 'colorscheme': 'wombat',
+      \ 'mode_map': {'c': 'NORMAL'},
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename' ] ]
+      \ },
+      \ 'component_function': {
+      \   'modified': 'LightlineModified',
+      \   'readonly': 'LightlineReadonly',
+      \   'fugitive': 'LightlineFugitive',
+      \   'filename': 'LightlineFilename',
+      \   'fileformat': 'MyFileformat',
+      \   'filetype': 'MyFiletype',
+      \   'fileencoding': 'LightlineFileencoding',
+      \   'mode': 'LightlineMode'
+      \ }
+      \ }
 
+function! MyFiletype()
+  return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype . ' ' . WebDevIconsGetFileTypeSymbol() : 'no ft') : ''
+endfunction
+
+function! MyFileformat()
+  return winwidth(0) > 70 ? (&fileformat . ' ' . WebDevIconsGetFileFormatSymbol()) : ''
+endfunction
+
+set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Plus\ Nerd\ File\ Types:h11
 function! LightlineModified()
   return &ft =~ 'help\|vimfiler\|gundo' ? '' : &modified ? '+' : &modifiable ? '' : '-'
 endfunction

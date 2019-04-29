@@ -232,11 +232,11 @@
 	<key>LoadPrefsFromCustomFolder</key>
 	<true/>
 	<key>NSFontPanelAttributes</key>
-	<string>1, 9</string>
+	<string>1, 0</string>
 	<key>NSNavLastRootDirectory</key>
-	<string>~/dotfiles</string>
+	<string>~/Documents</string>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
-	<string>{799, 448}</string>
+	<string>{712, 448}</string>
 	<key>NSQuotedKeystrokeBinding</key>
 	<string></string>
 	<key>NSRepeatCountBinding</key>
@@ -268,40 +268,23 @@
 	</data>
 	<key>NSTableView Supports v2 KeyBingingTable</key>
 	<true/>
-	<key>NSToolbar Configuration com.apple.NSColorPanel</key>
-	<dict>
-		<key>TB Is Shown</key>
-		<integer>1</integer>
-	</dict>
 	<key>NSWindow Frame NSFontPanel</key>
-	<string>-1851 -22 769 361 -1920 -180 1920 1057 </string>
-	<key>NSWindow Frame SUStatusFrame</key>
-	<string>0 735 400 129 0 0 1440 877 </string>
+	<string>-1128 -10 762 436 -1920 -180 1920 1080 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>650 498 620 392 0 0 1920 1057 </string>
-	<key>NSWindow Frame SessionsPreferences</key>
-	<string>269 126 606 469 0 0 1440 877 </string>
+	<string>410 363 620 392 0 0 1440 877 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>127 360 796 486 0 0 1440 877 </string>
+	<string>-1648 378 796 486 -1920 -180 1920 1080 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>-955 182 570 377 -1920 -180 1920 1057 </string>
+	<string>-1408 252 570 377 -1920 -180 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>321 351 570 452 0 0 1440 877 </string>
-	<key>NSWindow Frame iTerm Window 2</key>
-	<string>632 331 570 452 0 0 1440 877 </string>
-	<key>NSWindow Frame iTerm Window 3</key>
-	<string>75 242 1095 452 0 0 1440 900 </string>
-	<key>NSWindow Frame iTerm Window 4</key>
-	<string>584 242 808 452 0 0 1440 877 </string>
-	<key>NSWindow Frame iTerm Window 5</key>
-	<string>-975 354 570 452 -1920 39 1920 1080 </string>
+	<string>86 388 794 489 0 0 1440 877 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
 			<key>ASCII Anti Aliased</key>
 			<true/>
 			<key>ASCII Ligatures</key>
-			<false/>
+			<true/>
 			<key>Ambiguous Double Width</key>
 			<false/>
 			<key>Ansi 0 Color</key>
@@ -865,7 +848,7 @@
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>DejaVuSansMonoPowerline-Oblique 12</string>
+			<string>DejaVuSansMonoNerdFontComplete-Oblique 12</string>
 			<key>Option Key Sends</key>
 			<integer>0</integer>
 			<key>Prompt Before Closing 2</key>
@@ -930,28 +913,30 @@
 			<string>/Users/try</string>
 		</dict>
 	</array>
-	<key>NoSyncCommandHistoryHasEverBeenUsed</key>
-	<true/>
 	<key>NoSyncHaveRequestedFullDiskAccess</key>
 	<true/>
 	<key>NoSyncHaveWarnedAboutPasteConfirmationChange</key>
 	<true/>
 	<key>NoSyncInstallationId</key>
-	<string>9EFE3E04-A9D8-4953-97B7-B7831B1D0065</string>
+	<string>A8B9044B-F73A-43FB-9CE4-804828EB8271</string>
 	<key>NoSyncLastTipTime</key>
-	<real>561390033.950966</real>
+	<real>572883321.12611496</real>
+	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
+	<true/>
+	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
+	<integer>1</integer>
 	<key>NoSyncPermissionToShowTip</key>
 	<true/>
-	<key>NoSyncSuppressClipboardAccessDeniedWarning</key>
-	<true/>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
-	<real>560862689.010028</real>
+	<real>572202240.28859794</real>
 	<key>NoSyncTipsDisabled</key>
 	<true/>
 	<key>NoSyncTipsToNotShow</key>
 	<array>
 		<string>000</string>
 		<string>0000</string>
+		<string>0001</string>
+		<string>0002</string>
 	</array>
 	<key>PointerActions</key>
 	<dict>
@@ -987,17 +972,17 @@
 		</dict>
 	</dict>
 	<key>PrefsCustomFolder</key>
-	<string>/Users/try/dotfiles</string>
+	<string>/Users/try/.dotfiles/</string>
 	<key>SUEnableAutomaticChecks</key>
 	<true/>
 	<key>SUFeedAlternateAppNameKey</key>
 	<string>iTerm</string>
 	<key>SUFeedURL</key>
-	<string>https://iterm2.com/appcasts/final.xml?shard=79</string>
+	<string>https://iterm2.com/appcasts/final.xml?shard=75</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-02-18T04:00:19Z</date>
+	<date>2019-04-27T16:05:24Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SuppressRestartAnnouncement</key>
@@ -1007,6 +992,6 @@
 	<key>findMode_iTerm</key>
 	<integer>0</integer>
 	<key>iTerm Version</key>
-	<string>3.2.7</string>
+	<string>3.2.9</string>
 </dict>
 </plist>
