@@ -73,3 +73,22 @@ repo = 'ekalinin/Dockerfile.vim'
 
 [[plugins]]
 repo = 'cj/vim-webdevicons'
+
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+
+[[plugins]]
+repo ='ervandew/supertab'
+[[plugins]]
+repo = 'plasticboy/vim-markdown'
+[[plugins]]
+repo = 'kannokanno/previm'
+[[plugins]]
+repo = 'tyru/open-browser.vim'
+
+[[plugins]]
+repo = 'skanehira/translate.vim'
+[[plugins]]
+repo = 'sickill/vim-monokai'
+[[plugins]]
+repo = 'dag/vim-fish'

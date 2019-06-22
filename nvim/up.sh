@@ -1,1 +1,1 @@
-cp -rf ./ ~/.dotfiles/
+cp -rf ./ ~/.dotfiles/nvim/

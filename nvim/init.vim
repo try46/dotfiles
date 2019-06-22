@@ -39,6 +39,22 @@ inoremap ( ()<LEFT>
 " inoremap < <><LEFT>
 inoremap " ""<LEFT>
 inoremap ' ''<LEFT>
+let g:SuperTabContextDefaultCompletionType = "context"
+let g:SuperTabDefaultCompletionType = "<c-n>"
+"markdown周り"
+let g:vim_markdown_folding_disabled = 1
+let g:vim_markdown_auto_insert_bullets = 0
+let g:vim_markdown_new_list_item_indent = 0
+let g:translate_source = "en"
+let g:translate_target = "ja"
+let g:translate_winsize = 10
+autocmd BufRead,BufNewFile *.md set filetype=markdown
+let g:previm_open_cmd = 'open -a Google\ Chrome'
+" ctrl pでプレビュー
+nnoremap <silent> <C-p> :PrevimOpen<CR>
+let g:netrw_nogx = 1 " disable netrw's gx mapping.
+nmap gx <Plug>(openbrowser-smart-search)
+vmap gx <Plug>(openbrowser-smart-search)
 "let g:python3_host_prog = '/usr/local/bin/python3'
 "let g:python3_host_prog = '/Users/try/.pyenv/shims/python3'
 let g:python3_host_prog = '/Users/try/.pyenv/shims/python'
@@ -65,17 +81,16 @@ let g:Tex_BibtexFlavor = 'upbibtex'
 let g:Tex_MakeIndexFlavor = 'upmendex $*.idx'
 let g:Tex_UseEditorSettingInDVIViewer = 1
 let g:Tex_ViewRule_pdf = 'Skim'
-"let g:Tex_ViewRule_pdf = 'open -a Skim'
+let g:Tex_ViewRule_pdf = 'open -a Skim'
 let g:latex_latexmk_continuous = 1
 "let g:Tex_ViewRule_pdf = 'open -a Preview'
 "let g:Tex_ViewRule_pdf = 'open -a TeXShop'
 "let g:Tex_ViewRule_pdf = '/Applications/TeXworks.app/Contents/MacOS/TeXworks'
 "let g:Tex_ViewRule_pdf = '/Applications/texstudio.app/Contents/MacOS/texstudio --pdf-viewer-only'
 "let g:Tex_ViewRule_pdf = 'open -a Firefox'
-let g:Tex_ViewRule_pdf = 'open -a "Adobe Acrobat Reader DC"'
+""let g:Tex_ViewRule_pdf = 'open -a "Adobe Acrobat Reader DC"'
 "let g:Tex_ViewRule_pdf = 'open'"
 set number
-colorscheme dracula 
 set t_Co=256
 augroup PrevimSettings
   autocmd!
@@ -206,3 +221,8 @@ endfunction
 function! LightlineMode()
   return winwidth(0) > 60 ? lightline#mode() : ''
 endfunction
+colorscheme dracula 
+
+if &shell =~# 'fish$'
+    set shell=sh
+endif
