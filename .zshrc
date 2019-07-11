@@ -1,4 +1,4 @@
-#
+
 # Executes commands at the start of an interactive session.
 #
 # Authors:
@@ -13,12 +13,10 @@ export HISTFILE=${HOME}/.zsh_history
 export HISTSEZE=1000
 export SAVEHIST=100000
 #################
-alias vim='nvim'
 alias ks="ls -G"
 alias cf='clang-format'
 alias ee='exit'
 alias lmk='latexmk -pvc'
-alias vi='nvim'
 alias rain='rainbowstream -iot'
 alias tomcatstart=' /usr/local/Cellar/tomcat/9.0.16/bin/catalina start'
 alias tomcatstop=' /usr/local/Cellar/tomcat/9.0.16/bin/catalina stop'
@@ -33,7 +31,7 @@ export GOPATH=$HOME/go
 #setup rbenv 
 #eval "$(rbenv init -)"
 alias vagrantup='vagrant up && vagrant ssh'
-#[[ -z "$TMUX" && ! -z "$PS1" ]] && tmux
+if [ "$TMUX" = "" ]; then tmux; fi
 export PATH="/usr/local/opt/tomcat@8/bin:$PATH"
 export CPPFLAGS="-I/usr/local/opt/qt5/include"
 export LDFLAGS="-L/usr/local/opt/qt5/lib"
@@ -71,10 +69,9 @@ export PATH="/usr/local/opt/openssl/bin:$PATH"
 export LDFLAGS="-L/usr/local/opt/openssl/lib"
 export CPPFLAGS="-I/usr/local/opt/openssl/include"
 export PKG_CONFIG_PATH="/usr/local/opt/openssl/lib/pkgconfig"
-alias emacs="nvim"
-[[ -z "$TMUX" && ! -z "$PS1" ]] && tmux
+# [[ -z "$TMUX" && ! -z "$PS1" ]] && tmux
 export PATH="/usr/local/opt/sphinx-doc/bin:$PATH"
-figlet 'welcome to try.local'
+figlet 'TKuramoto . local'
 alias vs='code'
 export PATH=$HOME/.nodebrew/current/bin:$PATH
 alias py='python'
@@ -93,6 +90,24 @@ eval "$(pyenv init -)"
 export PATH="/Users/try/.pyenv/versions/anaconda3-5.3.1/bin:$PATH"
 export PATH="/Users/try/.config/composer/vendor/bin:$PATH"
 fpath=(/usr/local/bin/zsh/5.7/functions ${fpath})
-export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home"
-export ANDROID_HOME="/Users/try/Library/Android/sdk"
-export PATH="/Applications/Android Studio.app/Contents/gradle/gradle-4.10.1/bin:$PATH"
+#export JAVA_HOME=`/usr/libexec/java_home -v "11"`
+export JAVA_HOME=`/usr/libexec/java_home -v "1.8"`
+PATH=${JAVA_HOME}/bin:${PATH}
+export PATH=$HOME/.nodebrew/current/bin:$PATH
+alias tex="cd /usr/local/texlive/2018/texmf-dist/tex/latex"
+#alias dlangactivate="source $(~/dlang/install.sh dmd -a)"
+alias codei="/usr/local/bin/code-insiders"
+alias vi="/Users/try/nvim-osx64/bin/nvim"
+alias vim="/Users/try/nvim-osx64/bin/nvim"
+alias nvim="/Users/try/nvim-osx64/bin/nvim"
+alias nya="ssh -Y nya"
+alias nyapro="ssh -Y -N -f nyaproxy"
+alias tutvpnstart="networksetup -connectpppoeservice TUT"
+alias tutvpnstop="networksetup -disconnectpppoeservice TUT"
+
+
+export PATH="/usr/local/opt/gettext/bin:$PATH"
+export LDFLAGS="-L/usr/local/opt/gettext/lib"
+export CPPFLAGS="-I/usr/local/opt/gettext/include"
+export CFLAGS="-I/usr/local/include -L/usr/local/lib -I$(brew --prefix openssl)/include -I$(xcrun --show-sdk-path)/usr/include"
+
