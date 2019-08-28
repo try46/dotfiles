@@ -2,9 +2,6 @@
 repo = 'Shougo/dein.vim'
 
 [[plugins]]
-repo = 'itchyny/lightline.vim'
-
-[[plugins]]
 repo = 'scrooloose/nerdtree'
 hook_add = '''
   nnoremap <silent><C-e> :NERDTreeToggle<CR>
@@ -25,15 +22,15 @@ hook_add = '''
 [[plugins]]
 repo = 'Shougo/denite.nvim'
 
-[[plugins]]
-repo = 'vim-airline/vim-airline'
+#[[plugins]]
+#repo = 'vim-airline/vim-airline'
 #[[plugins]]
 [[plugins]]
 repo = 'vim-airline/vim-airline-themes'
 #repo = 'tomasr/molokai'
 [[plugins]]
-repo = 'dracula/vim'
-
+#repo = 'dracula/vim'
+repo = 'tomasr/molokai'
 [[plugins]]
 repo  = 'leafgarland/typescript-vim'
 
@@ -43,11 +40,6 @@ repo = 'Shougo/neosnippet-snippets'
 
 [[plugins]]
 repo = 'itchyny/lightline.vim'
-hook_add = '''
-  let g:lightline = {
-  \  'colorscheme' : 'one',
-  \}
-'''
 
 [[plugins]]
 repo = 'hzchirs/vim-material'

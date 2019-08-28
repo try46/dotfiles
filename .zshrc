@@ -31,8 +31,8 @@ export GOPATH=$HOME/go
 #setup rbenv 
 #eval "$(rbenv init -)"
 alias vagrantup='vagrant up && vagrant ssh'
-if [ "$TMUX" = "" ]; then tmux; fi
-export PATH="/usr/local/opt/tomcat@8/bin:$PATH"
+#if [ "$TMUX" = "" ]; then tmux; fi
+# export PATH="/usr/local/opt/tomcat@8/bin:$PATH"
 export CPPFLAGS="-I/usr/local/opt/qt5/include"
 export LDFLAGS="-L/usr/local/opt/qt5/lib"
 export PATH=/usr/local/opt/qt5/bin:$PATH
@@ -51,7 +51,7 @@ alias kougi='cd ~/Desktop/TUT-KOUGI2/3/second/'
 fpath=(/usr/local/share/zsh-completions $fpath)
 export PATH="/usr/local/opt/icu4c/bin:$PATH"
 export PATH="/usr/local/opt/icu4c/sbin:$PATH"
-alias brew="PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin brew"
+# alias brew="PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin brew"
 alias dex2jar="/Users/try/Desktop/dex2jar-2.0/d2j-dex2jar.sh"
 export PATH=$PATH:/Users/try/Library/Android/sdk/platform-tools
 
@@ -111,3 +111,12 @@ export LDFLAGS="-L/usr/local/opt/gettext/lib"
 export CPPFLAGS="-I/usr/local/opt/gettext/include"
 export CFLAGS="-I/usr/local/include -L/usr/local/lib -I$(brew --prefix openssl)/include -I$(xcrun --show-sdk-path)/usr/include"
 
+export PHPENV_ROOT="$HOME/.phpenv"
+export PATH="$PHPENV_ROOT/bin:$PATH"
+eval "$(phpenv init -)"
+
+export PATH="/usr/local/opt/bison@2.7/bin:$PATH"
+export LDFLAGS="-L/usr/local/opt/bison@2.7/lib"
+export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
+export LDFLAGS="-L/usr/local/opt/openssl@1.1/lib"
+export CPPFLAGS="-I/usr/local/opt/openssl@1.1/include"

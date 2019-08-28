@@ -92,6 +92,8 @@ let g:latex_latexmk_continuous = 1
 "let g:Tex_ViewRule_pdf = 'open'"
 set number
 set t_Co=256
+"Nerdtreeの設定"
+let NERDTreeWinSize=25
 augroup PrevimSettings
   autocmd!
   autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
@@ -150,12 +152,12 @@ function! TabToSpace()
   set expandtab
   retab 2
 endfunction
-let g:airline_powerline_fonts = 1
+""let g:airline_powerline_fonts = 1
 set laststatus=2
-let g:airline_theme='molokai'
-let g:airline#extensions#tabline#enabled = 1
+""let g:airline_theme='molokai'
+""let g:airline#extensions#tabline#enabled = 1
 let g:lightline = {
-      \ 'colorscheme': 'wombat',
+      \ 'colorscheme': 'solarized',
       \ 'mode_map': {'c': 'NORMAL'},
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename' ] ]
@@ -221,7 +223,7 @@ endfunction
 function! LightlineMode()
   return winwidth(0) > 60 ? lightline#mode() : ''
 endfunction
-colorscheme dracula 
+colorscheme molokai 
 
 if &shell =~# 'fish$'
     set shell=sh
