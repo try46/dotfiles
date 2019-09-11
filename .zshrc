@@ -27,7 +27,8 @@ export PATH="/usr/local/opt/tomcat@8/bin:$PATH"
 #setup goenv
 export PATH="$HOME/.goenv/bin:$PATH"
 eval "$(goenv init -)"
-export GOPATH=$HOME/go
+export GOPATH=$HOME/go/
+export PATH=$PATH:$GOPATH/bin
 #setup rbenv 
 #eval "$(rbenv init -)"
 alias vagrantup='vagrant up && vagrant ssh'
@@ -91,8 +92,8 @@ export PATH="/Users/try/.pyenv/versions/anaconda3-5.3.1/bin:$PATH"
 export PATH="/Users/try/.config/composer/vendor/bin:$PATH"
 fpath=(/usr/local/bin/zsh/5.7/functions ${fpath})
 #export JAVA_HOME=`/usr/libexec/java_home -v "11"`
-export JAVA_HOME=`/usr/libexec/java_home -v "1.8"`
-PATH=${JAVA_HOME}/bin:${PATH}
+#export JAVA_HOME=`/usr/libexec/java_home -v "1.8"`
+#PATH=${JAVA_HOME}/bin:${PATH}
 export PATH=$HOME/.nodebrew/current/bin:$PATH
 alias tex="cd /usr/local/texlive/2018/texmf-dist/tex/latex"
 #alias dlangactivate="source $(~/dlang/install.sh dmd -a)"
