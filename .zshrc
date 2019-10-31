@@ -41,7 +41,8 @@ export PATH="/usr/local/opt/libxml2/bin:$PATH"
 export PKG_CONFIG_PATH="/usr/local/opt/libxml2/lib/pkgconfig"
 export LDFLAGS="-L/usr/local/opt/libxml2/lib"
 export CPPFLAGS="-I/usr/local/opt/libxml2/include"
-alias gcc8="/usr/local/bin/gcc-8"
+alias gcc="/usr/local/bin/gcc-8"
+alias g++="/usr/local/bin/g++-8"
 alias mdir="mkdir {1..15}"
 export PATH="/usr/local/opt/sqlite/bin:$PATH"
 alias jn='jupyter-notebook'
@@ -72,7 +73,6 @@ export CPPFLAGS="-I/usr/local/opt/openssl/include"
 export PKG_CONFIG_PATH="/usr/local/opt/openssl/lib/pkgconfig"
 # [[ -z "$TMUX" && ! -z "$PS1" ]] && tmux
 export PATH="/usr/local/opt/sphinx-doc/bin:$PATH"
-figlet 'TKuramoto . local'
 alias vs='code'
 export PATH=$HOME/.nodebrew/current/bin:$PATH
 alias py='python'
@@ -98,9 +98,9 @@ export PATH=$HOME/.nodebrew/current/bin:$PATH
 alias tex="cd /usr/local/texlive/2018/texmf-dist/tex/latex"
 #alias dlangactivate="source $(~/dlang/install.sh dmd -a)"
 alias codei="/usr/local/bin/code-insiders"
-alias vi="/Users/try/nvim-osx64/bin/nvim"
-alias vim="/Users/try/nvim-osx64/bin/nvim"
-alias nvim="/Users/try/nvim-osx64/bin/nvim"
+alias vi="nvim"
+alias vim="nvim"
+alias nvim="nvim"
 alias nya="ssh -Y nya"
 alias nyapro="ssh -Y -N -f nyaproxy"
 alias tutvpnstart="networksetup -connectpppoeservice TUT"
@@ -121,3 +121,10 @@ export LDFLAGS="-L/usr/local/opt/bison@2.7/lib"
 export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
 export LDFLAGS="-L/usr/local/opt/openssl@1.1/lib"
 export CPPFLAGS="-I/usr/local/opt/openssl@1.1/include"
+export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
+#######zprezto周りの設定#############
+
+POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+POWERLEVEL9K_RPROMPT_ON_NEWLINE=true
+#POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir newline vcs)
