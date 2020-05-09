@@ -28,6 +28,7 @@ endif
 filetype plugin indent on
 " If you want to install not installed plugins on startup.
 syntax enable
+colorscheme darktheme
 if dein#check_install()
   call dein#install()
 endif
@@ -103,6 +104,8 @@ augroup END
 set expandtab
 set tabstop=2
 set shiftwidth=2
+"GUIのカーソルを変えないように
+set guicursor=
 hi SpecialKey ctermfg=darkmagenta
 set list listchars=tab:¦_
 set shortmess +=I
@@ -223,8 +226,14 @@ endfunction
 function! LightlineMode()
   return winwidth(0) > 60 ? lightline#mode() : ''
 endfunction
-colorscheme molokai 
 
 if &shell =~# 'fish$'
     set shell=sh
 endif
+
+"quickrun setting"
+
+let g:quickrun_config={}
+
+let g:quickrun_config.cpp = {'command':'g++-8'}
+let g:quickrun_config.python= {'command':'python'}

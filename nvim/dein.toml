@@ -81,6 +81,13 @@ repo = 'tyru/open-browser.vim'
 [[plugins]]
 repo = 'skanehira/translate.vim'
 [[plugins]]
-repo = 'sickill/vim-monokai'
-[[plugins]]
 repo = 'dag/vim-fish'
+[[plugins]]
+repo = 'kamykn/dark-theme.vim'
+[[plugins]]
+repo = 'peterhoeg/vim-qml'
+
+[[plugins]]
+repo = 'yume-yu/twitvim'
+[[plugins]]
+repo = 'thinca/vim-quickrun'
