@@ -45,6 +45,12 @@ call plug#begin('~/.vim/plugged')
 Plug 'junegunn/vim-plug'
 Plug 'scrooloose/nerdtree'
 call plug#end()
+for setting_file in split(glob('~/.config/nvim/*.vim'),'\n')
+  if match(fnamescanf(setting_file), 'init.vim')==-1
+    " execute 'source' setting_file
+    echo setting_file
+  endif
+endfor
 "let g:python3_host_prog = '/usr/local/bin/python3'
 " let g:python3_host_prog = '/Users/tkrmt/.anyenv/envs/pyenv/shims/python'
 " "End dein Scripts-------------------------
