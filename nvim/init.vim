@@ -41,8 +41,10 @@ if has('vim_starting')
     call system('git clone https://github.com/junegunn/vim-plug.git ~/.vim/plugged/vim-plug/autoload')
   end
 endif
-
-
+call plug#begin('~/.vim/plugged')
+Plug 'junegunn/vim-plug'
+Plug 'scrooloose/nerdtree'
+call plug#end()
 "let g:python3_host_prog = '/usr/local/bin/python3'
 " let g:python3_host_prog = '/Users/tkrmt/.anyenv/envs/pyenv/shims/python'
 " "End dein Scripts-------------------------
