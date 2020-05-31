@@ -43,8 +43,8 @@ if has('vim_starting')
 endif
 call plug#begin('~/.vim/plugged')
 Plug 'junegunn/vim-plug'
-"Plug 'scrooloose/nerdtree', {'on':'NerdTreeToggle'}
 Plug 'scrooloose/nerdtree'
+Plug 'itchyny/lightline.vim'
 call plug#end()
 for setting_file in split(glob('~/.config/nvim/*.vim'),'\n')
 	if match(fnameescape(setting_file), 'init.vim') == -1
