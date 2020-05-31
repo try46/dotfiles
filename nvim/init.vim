@@ -39,6 +39,7 @@ if has('vim_starting')
 		echo 'install vim-plug...'
 		call system('mkdir -p ~/.vim/plugged/vim-plug')
 		call system('git clone https://github.com/junegunn/vim-plug.git ~/.vim/plugged/vim-plug/autoload')
+    echo 'finish install vim-plug'
 	end
 endif
 call plug#begin('~/.vim/plugged')
