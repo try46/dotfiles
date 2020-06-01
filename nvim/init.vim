@@ -43,7 +43,7 @@ if has('vim_starting')
 	end
 endif
 call plug#begin('~/.vim/plugged')
-Plug 'junegunn/vim-plug'
+"Plug 'junegunn/vim-plug'
 Plug 'scrooloose/nerdtree'
 Plug 'itchyny/lightline.vim'
 call plug#end()
