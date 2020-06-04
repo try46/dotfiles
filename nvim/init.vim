@@ -86,7 +86,7 @@ endfor
 " ""let g:Tex_ViewRule_pdf = 'open -a Firefox'
 " ""let g:Tex_ViewRule_pdf = 'open -a "Adobe Acrobat Reader DC"'
 " ""let g:Tex_ViewRule_pdf = 'open'"
-" "set number
+set number
 " colorscheme molokai
 " set t_Co=256
 " augroup PrevimSettings
