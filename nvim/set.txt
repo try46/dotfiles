@@ -1,0 +1,3 @@
+eval declare -a array=( init.vim init_copy.vim lightline.vim nerdtree.vim ) 
+
+

@@ -1,24 +1,3 @@
-[[pulgins]]
-repo = 'Shougo/dein.vim'
-[[plugins]]
-repo = 'itchyny/lightline.vim'
-[[plugins]]
-repo = 'scrooloose/nerdtree'
-hook_add = '''
-nnoremap <silent><C-e> :NERDTreeToggle<CR>
-'''
-[[plugins]]
-repo = 'jacoborus/tender.vim'
-[[plugins]]
-repo = 'anoike/vim-moneyforward'
-[[plugins]]
-repo = 'nathanaelkane/vim-indent-guides'
-hook_add = '''
-let g:indent_guides_start_level = 2
-'''
-[[plugins]]
-repo = 'Shougo/denite.nvim'
-hook_add = '''
 autocmd FileType denite call s:denite_my_settings()
 function! s:denite_my_settings() abort
 nnoremap <silent><buffer><expr> <CR>
@@ -34,8 +13,3 @@ nnoremap <silent><buffer><expr> <CR>
   nnoremap <silent><buffer><expr> <Space>
   \ denite#do_map('toggle_select').'j'
 endfunction
-'''
-[[plugins]]
-repo = 'tomasr/molokai'
-[[plugins]]
-repo = 'itchyny/vim-gitbranch'
