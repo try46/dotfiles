@@ -13,6 +13,12 @@ Plug 'scrooloose/nerdtree'
 Plug 'itchyny/lightline.vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'tomasr/molokai'
+Plug 'Shougo/deoplete.nvim'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
+Plug 'lighttiger2505/deoplete-vim-lsp'
+Plug 'ujihisa/neco-look'
+Plug 'prabirshrestha/async.vim'
 call plug#end()
 for setting_file in split(glob('~/.config/nvim/*.vim'),'\n')
 	if match(fnameescape(setting_file), 'init.vim') == -1
